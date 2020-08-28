@@ -3,15 +3,20 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 // This is required to keep output styles in css files not in a js file
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
+// To create a base path for the project
+const path = require("path");
+const basePath = __dirname;
+
 module.exports = {
+  context: path.join(basePath, "src"),
   entry: {
     // To define the files used in dev mode
-    app: "./students.js",
+    app: "./index.js",
     appStyles: ["./mystyles.scss"],
   },
   output: {
     // To define the files we want to have after bundling
-    filename: "[name].[chunkhash].js",
+    filename: "./js/[name].[chunkhash].js",
   },
   module: {
     rules: [
@@ -42,6 +47,23 @@ module.exports = {
         exclude: /node_modules/,
         use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
+      {
+        // Loader for handling images
+        test: /\.(png|jpg)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "url-loader",
+          options: {
+            limit: 5000,
+            name: "./img/[hash].[name].[ext]",
+          },
+        },
+      },
+      {
+        // Loader for processing output references images in the html
+        test: /\.html$/,
+        loader: "html-loader",
+      },
     ],
   },
   plugins: [
@@ -53,7 +75,7 @@ module.exports = {
     }),
     //Generate styles in css files in /dist
     new MiniCssExtractPlugin({
-      filename: "[name].css",
+      filename: "./css/[name].[chunkhash].css",
       chunkFilename: "[id].css",
     }),
   ],
