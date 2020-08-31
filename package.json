@@ -1,7 +1,7 @@
 {
-  "name": "webpack-bundle-for-react",
+  "name": "webpack-advanced-bundle-for-react",
   "version": "1.0.0",
-  "description": "",
+  "description": "Advanced bundle for react using sass",
   "main": "index.js",
   "scripts": {
     "start": "run-p -l type-check:watch start:dev",
@@ -46,6 +46,7 @@
   },
   "dependencies": {
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0"
   }
 }
