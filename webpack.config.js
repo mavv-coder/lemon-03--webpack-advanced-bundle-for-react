@@ -15,7 +15,7 @@ module.exports = {
   entry: {
     // To define the files used in dev mode
     app: ["./index.jsx"],
-    appStyles: ["./mystyles.scss"],
+    appStyles: ["./mystyles.scss", "./averageComponentStyles.scss"],
   },
   output: {
     // To define the files we want to have after bundling

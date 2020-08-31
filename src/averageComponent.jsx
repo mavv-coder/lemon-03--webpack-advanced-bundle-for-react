@@ -14,7 +14,7 @@ export const AverageComponent = () => {
     <div>
       <h1>image</h1>
       <img src={godzilla} alt="" />
-      <span>Students average: {average}</span>
+      <span className="result-background">Students average: {average}</span>
     </div>
   );
 };
