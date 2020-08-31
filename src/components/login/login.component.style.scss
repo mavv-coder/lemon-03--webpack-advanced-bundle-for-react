@@ -1,5 +1,16 @@
-$background: indianred;
+$primary: rgb(238, 121, 235);
 
-.result-background {
-  background-color: $background;
+.main-container {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-title {
+  background-color: $primary;
+  width: max-content;
+  margin: 0 auto;
+  margin-bottom: 20px;
 }

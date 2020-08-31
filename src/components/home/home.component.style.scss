@@ -1,5 +1,16 @@
-$background: teal;
+$primary: rgb(84, 250, 137);
 
-.result-background {
-  background-color: $background;
+.main-container {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-title {
+  background-color: $primary;
+  width: max-content;
+  margin: 0 auto;
+  margin-bottom: 20px;
 }

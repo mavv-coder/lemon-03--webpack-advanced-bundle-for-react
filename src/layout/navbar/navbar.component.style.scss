@@ -1,0 +1,16 @@
+.list {
+  width: 100%;
+  list-style: none;
+  background-color: indianred;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+.link {
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+  &:hover {
+    color: black;
+  }
+}

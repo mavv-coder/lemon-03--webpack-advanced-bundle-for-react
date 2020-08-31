@@ -11,6 +11,10 @@ module.exports = {
   context: path.join(basePath, "src"),
   resolve: {
     extensions: [".js", ".ts", ".tsx"],
+    alias: {
+      router: path.resolve(__dirname, "./src/router/"),
+      images: path.resolve(__dirname, "./src/assets/img"),
+    },
   },
   entry: {
     // To define the files used in dev mode
