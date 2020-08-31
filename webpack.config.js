@@ -10,13 +10,14 @@ const basePath = __dirname;
 module.exports = {
   context: path.join(basePath, "src"),
   resolve: {
-    extensions: [".js", ".jsx"],
+    extensions: [".js", ".ts", ".tsx"],
   },
   entry: {
     // To define the files used in dev mode
-    app: ["./index.jsx"],
+    app: ["./index.tsx"],
     appStyles: ["./mystyles.scss"],
   },
+  stats: "errors-only",
   output: {
     // To define the files we want to have after bundling
     filename: "./js/[name].[chunkhash].js",
@@ -25,12 +26,11 @@ module.exports = {
     rules: [
       {
         // Loader for handling js files
-        test: /\.jsx?$/,
+        test: /\.tsx?$/,
         exclude: /node_modules/,
         loader: "babel-loader",
       },
       {
-        // Loader for handling scss files
         test: /\.scss$/,
         exclude: /node_modules/,
         use: [
@@ -41,6 +41,7 @@ module.exports = {
               modules: {
                 localIdentName: "[name]__[local]__[hash:base64:5]",
               },
+              // localsConvention: "camelCase",
             },
           },
           {
