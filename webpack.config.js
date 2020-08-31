@@ -9,9 +9,12 @@ const basePath = __dirname;
 
 module.exports = {
   context: path.join(basePath, "src"),
+  resolve: {
+    extensions: [".js", ".jsx"],
+  },
   entry: {
     // To define the files used in dev mode
-    app: "./index.js",
+    app: ["./index.jsx"],
     appStyles: ["./mystyles.scss"],
   },
   output: {
@@ -22,7 +25,7 @@ module.exports = {
     rules: [
       {
         // Loader for handling js files
-        test: /\.js$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: "babel-loader",
       },
@@ -56,6 +59,7 @@ module.exports = {
           options: {
             limit: 5000,
             name: "./img/[hash].[name].[ext]",
+            esModule: false,
           },
         },
       },
