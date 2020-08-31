@@ -7,8 +7,8 @@ export const LoginComponent: React.FC = () => {
   return (
     <>
       <NavbarComponent />
-      <div className={classes["main-container"]}>
-        <h1 className={classes["main-title"]}>Hello from Login Component</h1>
+      <div className={classes.mainContainer}>
+        <h1 className={classes.mainTitle}>Hello from Login Component</h1>
         <img src={hokusai} alt="" />
       </div>
     </>

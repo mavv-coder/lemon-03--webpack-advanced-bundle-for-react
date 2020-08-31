@@ -5,14 +5,14 @@ const classes = require("./navbar.component.style.scss");
 
 export const NavbarComponent: React.FC = () => {
   return (
-    <ul className={classes["list"]}>
+    <ul className={classes.list}>
       <li>
-        <Link to={switchRoutes.home} className={classes["link"]}>
+        <Link to={switchRoutes.home} className={classes.link}>
           Home
         </Link>
       </li>
       <li>
-        <Link to={switchRoutes.login} className={classes["link"]}>
+        <Link to={switchRoutes.login} className={classes.link}>
           {" "}
           Login
         </Link>
