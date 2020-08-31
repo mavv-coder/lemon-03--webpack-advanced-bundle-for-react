@@ -15,7 +15,7 @@ module.exports = {
   entry: {
     // To define the files used in dev mode
     app: ["./index.jsx"],
-    appStyles: ["./mystyles.scss", "./averageComponentStyles.scss"],
+    appStyles: ["./mystyles.scss"],
   },
   output: {
     // To define the files we want to have after bundling
@@ -35,7 +35,14 @@ module.exports = {
         exclude: /node_modules/,
         use: [
           MiniCssExtractPlugin.loader,
-          "css-loader",
+          {
+            loader: "css-loader",
+            options: {
+              modules: {
+                localIdentName: "[name]__[local]__[hash:base64:5]",
+              },
+            },
+          },
           {
             loader: "sass-loader",
             options: {

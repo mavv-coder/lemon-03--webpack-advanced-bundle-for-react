@@ -1,6 +1,7 @@
 import React from "react";
 import { getAvg } from "./averageService";
 const godzilla = require("./assets/img/godzilla.jpg");
+const classes = require("./averageComponentStyles.scss");
 
 export const AverageComponent = () => {
   const [average, setAverage] = React.useState(0);
@@ -14,7 +15,9 @@ export const AverageComponent = () => {
     <div>
       <h1>image</h1>
       <img src={godzilla} alt="" />
-      <span className="result-background">Students average: {average}</span>
+      <span className={classes["result-background"]}>
+        Students average: {average}
+      </span>
     </div>
   );
 };
