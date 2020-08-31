@@ -17,7 +17,6 @@ module.exports = {
     app: ["./index.tsx"],
     appStyles: ["./mystyles.scss"],
   },
-  stats: "errors-only",
   output: {
     // To define the files we want to have after bundling
     filename: "./js/[name].[chunkhash].js",

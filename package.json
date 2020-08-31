@@ -7,8 +7,10 @@
     "start": "run-p -l type-check:watch start:dev",
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
-    "start:dev": "webpack-dev-server --mode development --open",
-    "build": "rimraf dist && webpack --mode development"
+    "start:dev": "webpack-dev-server --mode development --open --config webpack.dev.js",
+    "build": "rimraf dist && webpack --mode development",
+    "build:dev": "rimraf dist && webpack --config webpack.dev.js",
+    "build:prod": "rimraf dist && webpack --config webpack.prod.js"
   },
   "author": "Miguel Ángel Vázquez Vera",
   "license": "ISC",
@@ -24,7 +26,7 @@
     "css-loader": "^4.2.2",
     "file-loader": "^6.0.0",
     "html-loader": "^1.3.0",
-    "html-webpack-plugin": "^4.3.0",
+    "html-webpack-plugin": "^4.4.1",
     "mini-css-extract-plugin": "^0.11.0",
     "npm-run-all": "^4.1.5",
     "rimraf": "^3.0.2",
@@ -35,7 +37,8 @@
     "url-loader": "^4.1.0",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^5.1.3"
   },
   "dependencies": {
     "react": "^16.13.1",
