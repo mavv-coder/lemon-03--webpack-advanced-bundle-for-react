@@ -1,7 +1,7 @@
 import React from "react";
 import { NavbarComponent } from "../../layout/navbar/navbar.component";
 const godzilla = require("../../assets/img/godzilla.jpg");
-const classes = require("./home.component.style.scss");
+const classes = require("./home.style.scss");
 
 export const HomeComponent: React.FC = () => {
   return (

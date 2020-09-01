@@ -1,7 +1,7 @@
 import React from "react";
 import { NavbarComponent } from "../../layout/navbar/navbar.component";
 const hokusai = require("../../assets/img/hokusai.jpg");
-const classes = require("./login.component.style.scss");
+const classes = require("./login.style.scss");
 
 export const LoginComponent: React.FC = () => {
   return (
